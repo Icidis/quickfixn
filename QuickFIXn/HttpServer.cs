@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET45
+using System;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Acceptor
 {
     public class HttpServer : IDisposable
     {
+
         private readonly HttpListener _httpListener;
         private Thread _connectionThread;
         private Boolean _running, _disposed;
@@ -598,5 +600,7 @@ namespace Acceptor
             }
             _disposed = true;
         }
+
     }
 }
+#endif
